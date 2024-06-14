@@ -1,0 +1,13 @@
+#stone{text-align: center;
+    text-size-adjust: 50px;
+    color: blue;
+   
+    
+}
+
+.b1{border-style: solid;
+    border-color: red;
+    border: 2px solid red;
+  border-radius: 5px
+
+}
