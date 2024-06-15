@@ -8,6 +8,15 @@ $(document).ready(function(){
    $(document).ready(function(){
     $("#div2").slideDown("slow");
 });
+$(document).ready(function(){
+          $("#im1").animate({
+            left: '50px',
+            height: '+=50px',
+            width: '+=50px'
+      });
+    });
+  
+
 function calculateAge() {
   
   let dateInput = document.getElementById('y').value;
