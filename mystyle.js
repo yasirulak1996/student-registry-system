@@ -4,4 +4,6 @@ $(document).ready(function(){
 
    });
    });
-   
+   $(document).ready(function(){
+    $("#div2").slideDown("slow");
+});

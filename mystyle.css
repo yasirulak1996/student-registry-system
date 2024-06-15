@@ -5,9 +5,25 @@
     
 }
 
-#registerButton{border-style: solid;
-    border-color: red;
-    border: 2px solid red;
+#registerButton{background-color: rgb(255, 0, 140);
+  margin-left: 80px;
+  border-style: solid;
+    border-color: rgb(89, 0, 255);
+    border: 2px solid;
   border-radius: 5px
+
+}
+#div1{margin-left: 80px;
+
+}
+#p1{ 
+  
+
+  color: rgb(192, 149, 31);
+}
+#div2{margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-bottom:30px;
 
 }
