@@ -18,8 +18,8 @@ $(document).ready(function(){
   
 
     
-    document.getElementById("myJoin").onclick = function() {
-        let dateInput = document.getElementById("myId").value;
+    document.getElementById("myjoin").onclick = function() {
+        let dateInput = document.getElementById("my id").value;
         let age, month, day;
         
         if (dateInput) {
