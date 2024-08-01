@@ -18,27 +18,34 @@ $(document).ready(function(){
   
 
     
-      document.getElementById("myJoin").onclick = function() {
-          let dateInput = document.getElementById('my id').value;
+    document.getElementById("myJoin").onclick = function() {
+        let dateInput = document.getElementById("myId").value;
+        let age, month, day;
+        
+        if (dateInput) {
+            let birthDate = new Date(dateInput);
+            let today = new Date();
+            
+            // Calculate age
+            age = today.getFullYear() - birthDate.getFullYear();
+            month = today.getMonth() - birthDate.getMonth();
+            day = today.getDate() - birthDate.getDate();
+            
+            // Adjust for negative month/day values
+            if (month < 0 || (month === 0 && day < 0)) {
+                age--;
+                month += 12;
+            }
+            if (day < 0) {
+                let lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, 0);
+                day += lastMonth.getDate();
+            }
+        } else {
+            age = month = day = 'N/A'; // Default values if no date is provided
+        }
 
-  
-          if (dateInput) {
-              let birthDate = new Date(dateInput);
-              let today = new Date();
-  
-              // Calculate age
-              let age = today.getFullYear() - birthDate.getFullYear();
-              let month = today.getMonth() - birthDate.getMonth();
-              if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
-                  age--;
-              }
-  
-              document.getElementById('demo').textContent = "Age: " + age;
-          } else {
-              document.getElementById('demo').textContent = "Please select a date.";
-          }
-      };
-
+        document.getElementById('demo').textContent = `Year: ${age}, Month: ${month}, Day: ${day}`;
+    }
 
 
 
