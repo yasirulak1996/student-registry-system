@@ -17,33 +17,29 @@ $(document).ready(function(){
     });
   
 
-function calculateAge() {
+    
+      document.getElementById("myJoin").onclick = function() {
+          let dateInput = document.getElementById('my id').value;
+
   
-  let dateInput = document.getElementById('y').value;
-
- 
-  if (dateInput) {
-      
-      let birthDate = new Date(dateInput);
-
-     
-      let today = new Date();
-
-      
-      let age = today.getFullYear() - birthDate.getFullYear();
-      let month = today.getMonth() - birthDate.getMonth();
-      if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
-          age--;
-      }
-
-      
-      document.getElementById('demo').innerHTML = "Age: " + age;
-  } else {
-      document.getElementById('demo').innerHTML = "Please select a date.";
-  }
-}
+          if (dateInput) {
+              let birthDate = new Date(dateInput);
+              let today = new Date();
+  
+              // Calculate age
+              let age = today.getFullYear() - birthDate.getFullYear();
+              let month = today.getMonth() - birthDate.getMonth();
+              if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+                  age--;
+              }
+  
+              document.getElementById('demo').textContent = "Age: " + age;
+          } else {
+              document.getElementById('demo').textContent = "Please select a date.";
+          }
+      };
 
 
-document.getElementById('y').addEventListener('change', calculateAge);
+
 
 
