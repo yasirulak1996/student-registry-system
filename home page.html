@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Class Platform</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    position: relative;
+    max-width: 100%;
+    padding: 20px;
+    margin: 10px;
+}
+
+.slider {
+    position: relative;
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.text {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(8, 8, 8);
+    font-size: 24px;
+    text-align: center;
+}
+
+#about, #courses, #contact {
+    padding: 50px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px 0;
+}
+
+.course-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.course-item {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    flex-basis: 200px;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <!-- Placeholder for Logo -->
+            <h1>E-Class Platform</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home page.html">Home</a></li>
+                <li><a href="student portrel.html">student portrel</a></li>
+                <li><a href="teachers portrel.html">teachers portrel</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+
+    <!-- Hero Section with Sliding Images -->
+    <section class="hero">
+        <div class="slider">
+            <div class="slide fade">
+                <img src="slide1.jpg" alt="Slide 1">
+                <div class="text">Welcome to Your Learning Journey</div>
+            </div>
+            <div class="slide fade">
+                <img src="slide2.jpg" alt="Slide 2">
+                <div class="text">Interactive Lessons</div>
+            </div>
+            <div class="slide fade">
+                <img src="slide3.jpg" alt="Slide 3">
+                <div class="text">Achieve Your Goals</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Our platform provides engaging and interactive lessons tailored for school students.</p>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <div class="course-list">
+            <div class="course-item">Mathematics</div>
+            <div class="course-item">Science</div>
+            <div class="course-item">History</div>
+            <div class="course-item">Language Arts</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to reach out to us!</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 E-Class Platform. All rights reserved.</p>
+    </footer>
+
+    <script> 
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+        </script>
+</body>
+</html>

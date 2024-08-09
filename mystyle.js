@@ -16,11 +16,18 @@ $(document).ready(function(){
       });
     });
   
-
+    const myjoin = document.getElementById("myjoin");
     
-    document.getElementById("myjoin").onclick = function() {
+    
+   
+    myjoin.onclick = function() {
         let dateInput = document.getElementById("my id").value;
         let age, month, day;
+        let studentname = document.getElementById("name of the student").value;
+        let sex = document.getElementById("sex").value;
+        let adress = document.getElementById("adress").value;
+        let phonenumber = document.getElementById("phone number").value;
+       
         
         if (dateInput) {
             let birthDate = new Date(dateInput);
@@ -41,12 +48,64 @@ $(document).ready(function(){
                 day += lastMonth.getDate();
             }
         } else {
-            age = month = day = 'N/A'; // Default values if no date is provided
+            age = month = day = 'N/A'; 
         }
 
         document.getElementById('demo').textContent = `Year: ${age}, Month: ${month}, Day: ${day}`;
+
+
+        if (studentname) {
+           
+            document.getElementById('demo1').textContent = ""; 
+        }else{
+    
+        
+        document.getElementById('demo1').textContent = "Please enter your name.";
+       
+     }
+        if (sex) {
+           
+        document.getElementById('demo2').textContent = ""; 
+       }else{
+
+    
+        document.getElementById('demo2').textContent = "Please enter your data.";
+   
+       }
+    
+       if (adress) {
+           
+        document.getElementById('demo3').textContent = ""; 
+       }else{
+
+    
+        document.getElementById('demo3').textContent = "Please enter your adress.";
+   
+       }
+       if (phonenumber) {
+           
+        document.getElementById('demo4').textContent = ""; 
+       }else{
+
+    
+        document.getElementById('demo4').textContent = "Please enter your phone number.";
+       }
+
+
+
+
+
+
+
     }
 
+   
+
+
+    
 
 
 
+
+
+    
