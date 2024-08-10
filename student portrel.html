@@ -63,7 +63,7 @@
 
         <div id="div1">
         <form id="myForm">
-            name of the student: <input type="text" id="name of the student" name="name of the student"> <p id="demo1"></p></p><br>
+            name of the student: <input type="text" id="name of the student" name="name of the student"> 
             birt hday: <input id="my id" type="date"  name="birth day"><br>
             <p id="demo"></p>
            <lable id="sex">sex</lable><br>
@@ -77,6 +77,18 @@
             
 
             
+        </form>
+        <form action="/submit-form" method="POST">
+          Name of the student: <input type="text" id="name_of_the_student" name="name_of_the_student"><br>
+          <p id="demo1"></p></p><br>
+          Birthday: <input id="birth_day" type="date" name="birth_day"><br>
+          <p id="demo"></p>
+          <label>Sex</label><br>
+          Male: <input type="radio" name="sex" value="male"><br>
+          Female: <input type="radio" name="sex" value="female"><br>
+          Address: <input type="text" id="address" name="address"><br>
+          Phone number: <input type="text" id="phone_number" name="phone_number"><br>
+          <input type="submit" value="Submit">
         </form>
         join to class:<button id="myjoin">join</button>
         

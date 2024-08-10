@@ -98,7 +98,44 @@ $(document).ready(function(){
 
 
     }
-
+    const express = require('express');
+    const bodyParser = require('body-parser');
+    const mysql = require('mysql');
+    
+    const app = express();
+    
+    // Body-parser middleware
+    app.use(bodyParser.urlencoded({ extended: true }));
+    
+    // MySQL connection setup
+    const connection = mysql.createConnection({
+      host: 'localhost',
+      user: 'your_username',     // Replace with your MySQL username
+      password: 'your_password', // Replace with your MySQL password
+      database: 'your_database'  // Replace with your MySQL database name
+    });
+    
+    // Connect to MySQL
+    connection.connect(err => {
+      if (err) throw err;
+      console.log('Connected to MySQL Database!');
+    });
+    
+    // Route to handle form submission
+    app.post('/submit-form', (req, res) => {
+      const { name_of_the_student, birth_day, sex, address, phone_number } = req.body;
+    
+      const query = `INSERT INTO students (name, birthday, sex, address, phone_number) VALUES (?, ?, ?, ?, ?)`;
+      connection.query(query, [name_of_the_student, birth_day, sex, address, phone_number], (err, result) => {
+        if (err) throw err;
+        res.send('Data successfully inserted!');
+      });
+    });
+    
+    // Start the server
+    app.listen(3000, () => {
+      console.log('Server started on http://localhost:3000');
+    });
    
 
 
