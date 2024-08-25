@@ -1,10 +1,4 @@
-$(document).ready(function(){
-  $("#registerButton").click(function(){
-  $("#div1").toggle();
 
-   });
-   });
-  
    $(document).ready(function(){
     $("#div2").slideDown("slow");
 });
@@ -21,12 +15,12 @@ $(document).ready(function(){
     
    
     myjoin.onclick = function() {
-        let dateInput = document.getElementById("my id").value;
+        let dateInput = document.getElementById("my_id").value;
         let age, month, day;
-        let studentname = document.getElementById("name of the student").value;
+        let studentname = document.getElementById("name_of_the_student").value;
         let sex = document.getElementById("sex").value;
         let adress = document.getElementById("adress").value;
-        let phonenumber = document.getElementById("phone number").value;
+        let phonenumber = document.getElementById("phone_number").value;
        
         
         if (dateInput) {

@@ -51,20 +51,9 @@
      
           <h1>Student Data</h1>
           <div id="student-table"></div>
-          <script>
-              fetch('http://localhost:3000/view-students')
-                  .then(response => response.text())
-                  .then(data => {
-                      document.getElementById('student-table').innerHTML = data;
-                  });
-                  app.get('/view-students', (req, res) => {
-  const query = 'SELECT * FROM students';
-
-  connection.query(query, (err, results) => {
-    if (err) throw err;
-
-    let table = `<table border="1">
-                  <tr>
+          <table>
+            <thead>     
+            <tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Birthday</th>
@@ -72,24 +61,10 @@
                     <th>Address</th>
                     <th>Phone Number</th>
                   </tr>`;
+                </thead> 
+                <tbody></tbody>
+     <script src="index.js"></script>
 
-    results.forEach(student => {
-      table += `<tr>
-                  <td>${student.id}</td>
-                  <td>${student.name}</td>
-                  <td>${student.birthday}</td>
-                  <td>${student.sex}</td>
-                  <td>${student.address}</td>
-                  <td>${student.phone_number}</td>
-                </tr>`;
-    });
-
-    table += '</table>';
-
-    res.send(table);
-  });
-});
-          </script>
       
 
 
